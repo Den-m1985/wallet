@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/V1__create_users.sql
+  - include:
+      file: db/changelog/changeset/V2__create_wallet.sql
+  - include:
+      file: db/changelog/changeset/V3__create_wallet_transaction.sql
+  - include:
+      file: db/changelog/changeset/V4__fill_user_data.sql
+  - include:
+      file: db/changelog/changeset/V5__fill_wallet_data.sql

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: wallet api
+  liquibase:
+    enabled: true
+
+  datasource:
+    url: jdbc:postgresql://db:5432/wallet_db  # For docker container
+#    url: jdbc:postgresql://localhost:5433/wallet_db  # For IDEA
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: 123456
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 10
+      idle-timeout: 30000
+      connection-timeout: 2000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  server:
+    port: 8080
+
+  logging:
+    level:
+      root: INFO
+      org.springframework.cloud: INFO
+      org.springframework.web: INFO
