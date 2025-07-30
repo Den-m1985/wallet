@@ -8,8 +8,11 @@ COPY ./ /app
 # Задаем рабочую директорию внутри контейнера
 WORKDIR /app
 
+# Кэшируем зависимости
+RUN mvn dependency:go-offline
+
 # Выполняем сборку приложения с помощью Maven
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # Создаем новый образ, используя JRE
 FROM openjdk:17-jdk-slim

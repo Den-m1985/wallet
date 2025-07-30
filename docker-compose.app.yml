@@ -5,5 +5,11 @@ services:
       dockerfile: Dockerfile
     container_name: wallet_api
     restart: unless-stopped
+    environment:
+      DATA_BASE_URL: ${DATA_BASE_URL}
+      DATA_BASE_DRIVER_CLASS_NAME: ${DATA_BASE_DRIVER_CLASS_NAME}
+      DATA_BASE_USER: ${DATA_BASE_USER}
+      DATA_BASE_PASSWORD: ${DATA_BASE_PASSWORD}
+      SERVER_PORT: ${SERVER_PORT}
     ports:
       - "8080:8080"
