@@ -34,6 +34,9 @@ GET api/v1/wallets/{WALLET_UUID}
 ### Swagger доступен по адресу, при запущенном приложении:
 http://localhost:8080/swagger-ui/index.html
 
+### Подготовка
+Необходимо удалить example чтоб получилось .env
+example.env  -> .env
 
 ### Работа с Docker
 Запусти базу данных:
