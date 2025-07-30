@@ -18,11 +18,11 @@ spring:
     hibernate:
       ddl-auto: validate
 
-  server:
-    port: 8080
-
   logging:
     level:
       root: INFO
       org.springframework.cloud: INFO
       org.springframework.web: INFO
+
+server:
+  port: 8080

@@ -5,8 +5,8 @@ services:
     container_name: wallet_db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: ${DATA_BASE_USER}
+      POSTGRES_PASSWORD: ${DATA_BASE_PASSWORD}
       POSTGRES_DB: wallet_db
       TZ: Europe/Moscow
       PG_MAX_CONNECTIONS: 200

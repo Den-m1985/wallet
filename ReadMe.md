@@ -44,8 +44,26 @@ docker compose -f docker-compose.db.yml up -d
 ```shell
 docker compose -f docker-compose.app.yml up -d
 ```
+Заходим внутрь контейнера:
+```shell
+docker exec -it wallet_db psql -U user -d wallet_db
+```
+Проверяем созданные базы данных
+```postgres-sql
+\l+
+```
+Список таблиц в базе данных
+```postgres-sql
+\dt
+```
 
-Данные для Postman:
+Выйти
+```postgres-sql
+\q
+```
+
+
+### Данные для Postman:
 POST http://localhost:8080/api/v1/wallets
 ```json
 {

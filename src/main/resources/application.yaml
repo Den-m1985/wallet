@@ -5,11 +5,10 @@ spring:
     enabled: true
 
   datasource:
-    url: jdbc:postgresql://db:5432/wallet_db  # For docker container
-#    url: jdbc:postgresql://localhost:5433/wallet_db  # For IDEA
-    driver-class-name: org.postgresql.Driver
-    username: user
-    password: 123456
+    url: ${DATA_BASE_URL}
+    driver-class-name: ${DATA_BASE_DRIVER_CLASS_NAME}
+    username: ${DATA_BASE_USER}
+    password: ${DATA_BASE_PASSWORD}
     hikari:
       maximum-pool-size: 100
       minimum-idle: 10
@@ -19,11 +18,11 @@ spring:
     hibernate:
       ddl-auto: validate
 
-  server:
-    port: 8080
-
   logging:
     level:
       root: INFO
       org.springframework.cloud: INFO
       org.springframework.web: INFO
+
+server:
+  port: ${SERVER_PORT}
